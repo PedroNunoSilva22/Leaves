@@ -1,0 +1,333 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+/ / background-color: #FF5722;
+/ / #00ee00;
+    background-color: var(--main-bg-color);
+    font-family: "Neue Machina";
+
+    --main-bg-color: #242424;
+    --main-txt-color: #f0f0f0;
+    --div-complement-color: #22ffa0;
+}
+a{
+    padding-top: 10px;
+    text-decoration: none;
+}
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    z-index: -1;
+    position: absolute;
+    justify-content: center;
+}
+
+#legenda {
+    width: 1700px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#legenda div {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+#legenda svg {
+    margin-right: 1vh;
+    position: relative;
+    height: 100%;
+}
+
+p {
+    color: var(--main-txt-color);
+    font-size: 15px;
+}
+
+#sidebar {
+    float: right;
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--div-complement-color);
+    display: none;
+}
+
+#title{
+    position: absolute;
+    width: 100vw;
+    align-items: center;
+}
+#title h1{
+    font-weight: bold;
+    font-size: 100px;
+    color: var(--div-complement-color);
+    text-align: center;
+}
+#stats button{
+    font-family: "Neue Machina";
+    font-weight: bold;
+}
+
+#stats{
+    position: absolute;
+    top:230px;
+    left: 50px;
+    padding: 50px;
+    color: var(--main-txt-color);
+    width: 15vw;
+    height: 100vh;
+}
+
+#stats p{
+    list-style: none;
+    margin: 0px 0px 70px 0px;
+    font-size: 30px;
+    line-height: 1.16;
+}
+
+#stats li{
+    line-height: 1.5;
+    color: var(--main-txt-color);
+}
+
+#statsDistrict{
+    position: absolute;
+    top:230px;
+    left: 300px;
+    padding: 50px;
+    color: var(--main-txt-color);
+    width: 15vw;
+    height: 100vh;
+}
+
+#statsDistrict p{
+    margin:0px 0px 50px 0px;
+}
+
+#district{
+    list-style: none;
+    margin: 0px 0px 70px 0px;
+    font-size: 100px;
+    line-height: 1.16;
+}
+
+#numberLeavesDistrict, #numberContractsDistrictX{
+    line-height: 1.5;
+    color: var(--main-txt-color);
+    font-size: 60px;
+}
+
+
+.collapsible {
+    background-color: var(--div-complement-color);
+    color: var(--main-bg-color);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 30px;
+}
+
+.active, .collapsible:hover {
+    background-color: #0fd296;
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #0fd296; //var(--div-complement-color);
+}
+
+.content p li{
+    color: var(--main-bg-color) !important;
+}
+
+
+/* //////////////////////////////////////////
+/*             TIMELINE
+/* //////////////////////////////////////////
+
+
+/* FIX ACTIVE CROPPED BULLET*/
+
+/* NEED TO FIX ACTIVE CROPPED BULLET - OVERFLOW HIDDEN ISSUE */
+.row{
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 4600px;
+}
+
+.loading-bar__wrapper {
+    border-radius: 5px;
+    padding: 60px 60px 30px;
+
+}
+.loading-bar__wrapper label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    font-style: italic;
+    font-weight: bold;
+    color: #00ffa4;
+}
+.loading-bar {
+    background: #00ffa4;
+    height: 4px;
+    border-radius: 100px;
+    justify-content: space-around;
+}
+.loading-bar-bullet::before {
+    content: "";
+    display: block;
+    background: var(--div-complement-color);
+    height: 16px;
+    width: 16px;
+    border-radius: 100px;
+    z-index: 999;
+    margin-top: -8px;
+    border: 10px solid rgb(40,40,40);
+    cursor: pointer;
+}
+.slick-current.loading-bar-bullet::before {
+    background-color: var(--div-complement-color);
+    border: 3px solid var(--main-bg-color);
+}
+.labels {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 32px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+    opacity: 0.25;
+}
+.slick-prev:before,
+.slick-next:before {
+    font-size: 32px;
+    line-height: 1;
+    opacity: 0.75;
+    color: #000000;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-prev {
+    left: -40px;
+}
+.slick-prev:before {
+    content: "\f104";
+}
+.slick-next {
+    right: -40px;
+}
+.slick-next:before {
+    content: "\f105";
+}
+
+.qb-button {
+    display: inline-block;
+    background: #00ffa4;
+    border-radius: 100px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    color: var(--main-bg-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.qb-button:hover {
+    color: #000;
+}
+
+
+/*
+.lefas {
+    position: absolute;
+    background-size: cover;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    filter: url("#turbulence");
+}
+*/
+
+html, body {
+    pointer-events: none;
+}
+
+body * {
+    pointer-events: all;
+}
+
+.details{
+    background: var(--main-bg-color);
+    filter: drop-shadow(5px 5px 10px #111111);
+    width:600px;
+    height: 600px;
+    position: absolute;
+    z-index: 100;
+    border-radius: 5px;
+    visibility: hidden;
+    display: flex;
+}
+
+
+
+/* Create two equal columns that sits next to each other */
+.row{
+    position: unset;
+    width: 300px;
+    font-size: 10px;
+    flex: 50%;
+    padding: 10px;
+
+}
